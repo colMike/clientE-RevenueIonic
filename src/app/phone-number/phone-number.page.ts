@@ -16,5 +16,5 @@ register() {
   } 
  socila_login() {
     this.route.navigate(['./socila-login']);
-  } 
+  }
 }

@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-socila-login',
-  templateUrl: './socila-login.page.html',
-  styleUrls: ['./socila-login.page.scss'],
+    selector: 'app-socila-login',
+    templateUrl: './socila-login.page.html',
+    styleUrls: ['./socila-login.page.scss'],
 })
 export class SocilaLoginPage implements OnInit {
 
-  constructor(private route: Router) { }
+    hasError = false;
 
-  ngOnInit() {
-  }
+    constructor(private route: Router) {
+    }
 
-verification() {
-    this.route.navigate(['./verification']);
-  } 
+    ngOnInit() {
+    }
+
+    verification() {
+        this.route.navigate(['./tabs/home']);
+    }
 }

@@ -1,35 +1,71 @@
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+            <ion-back-button icon="chevron-back-outline" text=""></ion-back-button>
         </ion-buttons>
         <ion-title>
+            E-Revenue
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
+
+<!--    <hr style="width: 35%" class="ion-text-center m-0">-->
+    <!-- begin::Alert info-->
+<!--    <ng-container *ngIf="!hasError">-->
+<!--        <div class="mb-10 alert alert-custom alert-light-info alert-dismissible">-->
+<!--            <div class="alert-text">-->
+<!--                Use your registered email account and password to continue.-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </ng-container>-->
+    <!-- end::Alert info-->
+
+    <!-- begin::Alert error-->
+<!--    <ng-container *ngIf="hasError">-->
+<!--        <div-->
+<!--                class="mb-10 alert alert-custom alert-light-danger alert-dismissible"-->
+<!--        >-->
+<!--            <div class="alert-text">The login details are incorrect</div>-->
+<!--        </div>-->
+<!--    </ng-container>-->
+    <!-- end::Alert error-->
+
     <div class="form">
         <ion-list lines="none">
-            <h1 class="animate__animated animate__fadeInUp">{{'hey' | translate}} Samantha,</h1>
+            <h1 class="animate__animated animate__fadeInUp">{{'hey' | translate}} Customer,</h1>
             <h2 class="animate__animated animate__fadeInUp">
-                {{'you_are_almost_in' | translate}}.
+                Welcome to E-Revenue
                 <br>
-                {{'please_provide_you_phone_number_for_verification_purpose' | translate}}.
+                New here? <a routerLink="../register">Sign Up.</a>
+                <br>
+
+
             </h2>
             <ion-item class="animate__animated animate__fadeInUp" lines="none">
                 <div class="item_inner d-flex">
-                    <div class="icon_box ion-text-start"><img src="assets/images/ic_phone.png"></div>
+                    <div class="icon_box ion-text-start"><img src="assets/images/email.png"></div>
                     <div class="input_box">
-                        <ion-label mode="md" position="stacked">{{"phone_number" | translate}}</ion-label>
-                        <ion-input mode="md" type="text" placeholder="" value="+1 987 654 3210"></ion-input>
+                        <ion-label mode="md" position="stacked">Email</ion-label>
+                        <ion-input mode="md" placeholder="" type="text" value="michael@gmail.com"></ion-input>
                     </div>
                 </div>
             </ion-item>
-            <p class="d-flex animate__animated animate__fadeInUp"><span class="end">{{"we_ll_send_verification_code_on_adove_given_number" | translate}}</span></p>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <div class="icon_box ion-text-start"><img src="assets/images/password.png"></div>
+                    <div class="input_box">
+                        <ion-label mode="md" position="stacked">Password</ion-label>
+                        <ion-input mode="md" placeholder="" type="password" value="colmic76"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <!--            <p class="d-flex animate__animated animate__fadeInUp"><span class="end">{{"we_ll_send_verification_code_on_above_given_number" | translate}}</span></p>-->
         </ion-list>
     </div>
 </ion-content>
 <ion-footer class="ion-no-border animate__animated animate__fadeInUp" style="--animate-duration: .4s;">
-    <ion-button size="large" expand="full" class="btn" (click)="verification()">{{'continue' | translate}}</ion-button>
+    <ion-button (click)="verification()" class="btn" expand="full" size="large">{{'continue' | translate}}</ion-button>
 </ion-footer>

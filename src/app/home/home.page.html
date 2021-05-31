@@ -18,11 +18,12 @@
                     </ion-item> 
                 </div>
 
-                <span class="end cart_icon" (click)="cart()">
-                    <img src="assets/images/ic_cart_blk.png" class="light-theme-icon">
-                    <img src="assets/images/ic_cart_wt.png" class="dark-theme-icon"> 
-                    <ion-badge>2</ion-badge>
-                </span>
+<!--                <span class="end cart_icon" (click)="cart()">-->
+<!--                    <img src="assets/images/ic_cart_blk.png" class="light-theme-icon">-->
+<!--                    <img src="assets/images/ic_cart_wt.png" class="dark-theme-icon"> -->
+<!--                    <ion-badge>2</ion-badge>-->
+<!--                </span>-->
+
             </div>
         </ion-title>
     </ion-toolbar>
@@ -35,11 +36,11 @@
 
 <ion-content>
     <div class="item-container">
-        <h2><strong>{{'got_delivered' | translate}}</strong> {{'everything_you_need' | translate}}</h2>
+        <h2>These are the services available</h2>
 
         <ion-row>
             <ion-col class="animate__animated animate__zoomIn" size="6">
-                <div class="item_box" (click)="stores()">
+                <div class="item_box" (click)="cart()">
                     <div class="item_img">
                         <img src="assets/images/parking.png">
                     </div>
@@ -52,7 +53,7 @@
             </ion-col>   
 
             <ion-col class="animate__animated animate__zoomIn" size="6">
-                <div class="item_box" (click)="stores()">
+                <div class="item_box" (click)="cart()">
                     <div class="item_img">
                         <img src="assets/images/business.png">
                     </div>

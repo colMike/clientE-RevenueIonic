@@ -1,25 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+    selector: 'app-home',
+    templateUrl: './home.page.html',
+    styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-location: string = "home"; 
-  constructor(private route: Router) { }
+    location: string = 'home';
 
-  ngOnInit() {
-  }
+    constructor(private route: Router) {
+    }
 
-cart() {
-    this.route.navigate(['./cart']);
-  } 
-stores() {
-    this.route.navigate(['./stores']);
-  }    
-custom_delivery() {
-    this.route.navigate(['./custom-delivery']);
-  }
+    ngOnInit() {
+    }
+
+    cart() {
+        this.route.navigate(['./cart']);
+    }
+
+    stores() {
+        this.route.navigate(['./stores']);
+    }
+
+    custom_delivery() {
+        this.route.navigate(['./custom-delivery']);
+    }
 }

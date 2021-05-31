@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class SetLocationPage implements OnInit {
 fabAction = false;
-  constructor(private navCtrl: NavController,) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
