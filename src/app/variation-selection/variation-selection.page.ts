@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 
-import {Item} from './item';
-import {ITEMS} from './mock-data';
+import {Item} from '../cart/item';
+import {ITEMS} from '../cart/mock-data';
 import {ParkingService} from '../../services/parking.service';
 
 @Component({
@@ -35,20 +35,21 @@ export class VariationSelectionPage implements OnInit {
     }
 
     ngOnInit() {
-        this.getAllParkingZones();
+        this.itemsList = [{zoneId: '201', zoneName: 'Nyandarua'}, {zoneId: '202', zoneName: 'Meru'}];
+        // this.getAllParkingZones();
     }
 
-    getAllParkingZones() {
-        this.parkingSvc.getParkingZones().subscribe(result => {
-            this.itemsList = result.map(parkingZone => {
-                return {
-                    zoneId: parkingZone.subCountyId,
-                    zoneName: parkingZone.subCountyName
-                };
-            });
-
-        });
-    }
+    // getAllParkingZones() {
+    //     this.parkingSvc.getParkingZones().subscribe(result => {
+    //         this.itemsList = result.map(parkingZone => {
+    //             return {
+    //                 zoneId: parkingZone.subCountyId,
+    //                 zoneName: parkingZone.subCountyName
+    //             };
+    //         });
+    //
+    //     });
+    // }
 
     dismiss() {
         this.modalController.dismiss();
