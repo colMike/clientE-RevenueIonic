@@ -11,16 +11,16 @@
 <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
 
     <div class="banner animate__animated animate__zoomInUp">
-        <div class="logo ion-text-center">
-            <img class="light_theme_logo" src="assets/images/Logo.png">
-            <img class="dark_theme_logo" src="assets/images/logo_user_dark.png">
+        <div class="ion-text-center">
+            <img class="light_theme_logo" src="assets/images/logoWithName.png">
+<!--            <img class="dark_theme_logo" src="assets/images/logoWithName.png">-->
         </div>
         <!--        <h2 class="ion-text-center"><strong>{{'delivering_almost' | translate}}</strong> {{'everything' | translate}}</h2>-->
     </div>
 
     <div class="footer_banner animate__animated animate__fadeInUp" style="--animate-duration: .3s;">
         <div class="img_box">
-            <img src="assets/images/login_image_1.png">
+            <img src="assets/images/img_1.png">
         </div>
     </div>
 
@@ -39,9 +39,11 @@
 
     <div class="social_login">
         <!--        <h3 class="ion-text-center">{{'or' | translate}}</h3>-->
+
+
         <div class="button_container">
 
-            <div (click)="register()" class="btn d-flex Google animate__animated animate__fadeInUp">
+            <div (click)="register()" expand="block" class="m-2 btn d-flex Facebook animate__animated animate__fadeInUp">
                 <div class="img_box ion-text-center">
                     <!--                    <img src="assets/images/ic_login_google.png">-->
                 </div>
@@ -49,7 +51,9 @@
             </div>
 
 
-            <div (click)="socila_login()" class="btn Facebook d-flex animate__animated animate__fadeInUp">
+<!--            <ion-button (click)="socila_login()" expand="block" color="success" class="animate__animated animate__fadeInUp">Register</ion-button>-->
+
+            <div (click)="socila_login()" expand="block" class="m-2 btn Google d-flex animate__animated animate__fadeInUp">
                 <div class="img_box ion-text-center">
                     <!--                    <img src="assets/images/ic_login_facebook.png">-->
                 </div>

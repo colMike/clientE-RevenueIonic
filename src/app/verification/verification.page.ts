@@ -14,7 +14,6 @@ export class VerificationPage implements OnInit {
   }
 
 set_location() {
-    this.route.navigate(['./set-location']);
+  this.route.navigate(['./tabs/home']);
   } 
 }
- 

@@ -13,7 +13,7 @@ export class PaymentPage implements OnInit {
   ngOnInit() {
   }
   pay() {
-    this.navCtrl.navigateRoot(['./order-placed']);
+    this.navCtrl.navigateRoot(['./']);
   } 
     
 }

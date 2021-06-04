@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 
-import {Item} from '../cart/item';
-import {ITEMS} from '../cart/mock-data';
+import {Item} from '../parking/item';
+import {ITEMS} from '../parking/mock-data';
 import {ParkingService} from '../../services/parking.service';
 
 @Component({

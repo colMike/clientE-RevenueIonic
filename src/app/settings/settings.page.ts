@@ -31,10 +31,10 @@ export class SettingsPage implements OnInit {
     window.localStorage.setItem(Constants.KEY_DEFAULT_LANGUAGE, this.defaultLanguageCode);
   }
  onClick(event){
-    let systemDark = window.matchMedia("(class: dark-theme)");
+    let systemDark = window.matchMedia("(class: light-theme)");
     systemDark.addListener(this.colorTest);
     if(event.detail.checked){
-      document.body.setAttribute('class', 'dark-theme');
+      document.body.setAttribute('class', 'light-theme');
     }
     else{
       document.body.setAttribute('class', 'light-theme');
@@ -43,7 +43,7 @@ export class SettingsPage implements OnInit {
 
    colorTest(systemInitiatedDark) {
     if (systemInitiatedDark.matches) { 
-      document.body.setAttribute('class', 'dark-theme');		
+      document.body.setAttribute('class', 'light-theme');
     } else {
       document.body.setAttribute('class', 'light-theme');
     }

@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     redirectTo: '/phone-number',
     pathMatch: 'full'
-  },    
+  },
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
@@ -45,11 +45,19 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () => import('./parking/cart.module').then(m => m.CartPageModule)
+  },
+  {
+    path: 'sbp',
+    loadChildren: () => import('./sbp/cart.module').then(m => m.CartPageModule)
   },
   {
     path: 'payment',
     loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'mpesa-payment',
+    loadChildren: () => import('./mpesa-payment/mpesa-payment.module').then( m => m.OrderPlacedPageModule)
   },
   {
     path: 'order-placed',
@@ -110,7 +118,8 @@ const routes: Routes = [
   {
     path: 'add-money',
     loadChildren: () => import('./add-money/add-money.module').then( m => m.AddMoneyPageModule)
-  },  {
+  },
+  {
     path: 'vt-popup',
     loadChildren: () => import('./vt-popup/vt-popup.module').then( m => m.VtPopupPageModule)
   }

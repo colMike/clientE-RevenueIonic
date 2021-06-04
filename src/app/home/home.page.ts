@@ -19,11 +19,19 @@ export class HomePage implements OnInit {
         this.route.navigate(['./cart']);
     }
 
+    sbp() {
+        this.route.navigate(['./sbp']);
+    }
+
     stores() {
         this.route.navigate(['./stores']);
     }
 
     custom_delivery() {
         this.route.navigate(['./custom-delivery']);
+    }
+
+    getNotifications() {
+        alert('It works');
     }
 }

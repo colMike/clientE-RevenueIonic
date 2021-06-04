@@ -1,32 +1,28 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>
-            <div class="title_inner d-flex">
-                <div class="form">
-                    <ion-item lines="none">
-                        <div class="item_inner d-flex">
-                            <ion-icon class="ion-text-start" name="albums-outline"></ion-icon>
-
-                            <ion-select mode="ios" interface="popover" [(ngModel)]="location">
-                                <ion-select-option value="home">Parking</ion-select-option>
-                                <ion-select-option value="office">SBP</ion-select-option>
-                                <ion-select-option value="other">Land Rates</ion-select-option>
-                            </ion-select>
-
-                            <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>
-                        </div>
-                    </ion-item> 
+    <h3 class="d-flex">
+        <ion-toolbar>
+            <ion-title>
+                <div class="title_inner d-flex">
+                    <div class="form">
+                        <ion-item lines="none">
+                            <div class="item_inner d-flex">
+                                <ion-icon class="ion-text-start" name="albums-outline"></ion-icon>
+                                <ion-select mode="ios" interface="popover" [(ngModel)]="location">
+                                    <ion-select-option value="home" routerLink="./cart">Parking</ion-select-option>
+                                    <ion-select-option value="office"  routerLink="./sbp">SBP</ion-select-option>
+                                    <ion-select-option value="other">Land Rates</ion-select-option>
+                                </ion-select>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>
+                            </div>
+                        </ion-item>
+                    </div>
                 </div>
+            </ion-title>
+        </ion-toolbar>
 
-<!--                <span class="end cart_icon" (click)="cart()">-->
-<!--                    <img src="assets/images/ic_cart_blk.png" class="light-theme-icon">-->
-<!--                    <img src="assets/images/ic_cart_wt.png" class="dark-theme-icon"> -->
-<!--                    <ion-badge>2</ion-badge>-->
-<!--                </span>-->
+        <span class="end" (click)="getNotifications()"> <ion-icon class="ion-text-start me-4" name="albums-outline"></ion-icon> </span></h3>
 
-            </div>
-        </ion-title>
-    </ion-toolbar>
+
 
     <div class="search_box animate__animated animate__zoomIn">
         <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
@@ -53,7 +49,7 @@
             </ion-col>   
 
             <ion-col class="animate__animated animate__zoomIn" size="6">
-                <div class="item_box" (click)="cart()">
+                <div class="item_box" (click)="sbp()">
                     <div class="item_img">
                         <img src="assets/images/business.png">
                     </div>
