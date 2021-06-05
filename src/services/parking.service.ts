@@ -52,7 +52,7 @@ export class ParkingService {
 
 
     payForParking(Parking): Observable<any> {
-        return this.http.post(`${this.API_URL.url}/parkingService/makeParkingPayment`, Parking, {observe: 'response'});
+        return this.http.post(`http://197.220.114.46:20202/DCParkingPayment/DCParkingPaymentServlet`, Parking, {observe: 'response'});
     }
 }
 

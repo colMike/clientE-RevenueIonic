@@ -6,11 +6,13 @@ import {ParkingService} from '../../services/parking.service';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Parking} from './Parking';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {ParkingSharedService} from '../Services/parking.shared.service';
 
 @Component({
     selector: 'app-cart',
     templateUrl: './cart.page.html',
     styleUrls: ['./cart.page.scss'],
+    providers: [ParkingSharedService]
 })
 export class CartPage implements OnInit {
 
@@ -59,7 +61,9 @@ export class CartPage implements OnInit {
         private route: Router,
         private modalController: ModalController,
         public fb: FormBuilder,
-        private parkingSvc: ParkingService) {
+        private parkingSvc: ParkingService,
+        private parkingSharedSvc: ParkingSharedService
+    ) {
     }
 
     get dailyFormControl() {
@@ -96,7 +100,7 @@ export class CartPage implements OnInit {
 
 
     ngOnInit() {
-        // this.itemsList = [{zoneId: '775', zoneName: 'Nyandarua'}, {zoneId: '776', zoneName: 'Meru'}];
+        this.parkingSharedSvc.sharedRequest.subscribe(result => this.parkingDetails = result);
         this.getAllParkingZones();
     }
 
@@ -113,6 +117,14 @@ export class CartPage implements OnInit {
     }
 
     payment() {
+
+        this.parkingDetails.data.transaction_details.service_id = this.formGroup.get('parkingType').value;
+        this.parkingDetails.data.transaction_details.sub_county_id = this.formGroup.get('parkingZone').value;
+        this.parkingDetails.data.transaction_details.car_type_id = this.formGroup.get('vehicleType').value;
+        this.parkingDetails.data.transaction_details.amount = this.charge;
+
+        this.updateParkingRequest(this.parkingDetails);
+
         this.route.navigate(['./payment']);
     }
 
@@ -251,6 +263,10 @@ export class CartPage implements OnInit {
     isControlInvalid(controlName: string): boolean {
         const control = this.formGroup.controls[controlName];
         return control.invalid && (control.dirty || control.touched);
+    }
+
+    updateParkingRequest(parkingDetails) {
+        this.parkingSharedSvc.nextMessage(parkingDetails);
     }
 
 }

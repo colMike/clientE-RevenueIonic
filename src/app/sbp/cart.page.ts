@@ -6,6 +6,7 @@ import {ParkingService} from '../../services/parking.service';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Parking} from './Parking';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {SBPService} from '../../services/sbp.service';
 
 @Component({
     selector: 'app-cart',
@@ -16,6 +17,10 @@ export class CartPage implements OnInit {
 
     isLoading$: Observable<boolean>;
     isLoadingSubject: BehaviorSubject<boolean>;
+
+    subcounties: any;
+    wards: any;
+    permitTypes: any;
 
     parkingDetails: any = {};
 
@@ -87,7 +92,7 @@ export class CartPage implements OnInit {
         private route: Router,
         private modalController: ModalController,
         public fb: FormBuilder,
-        private parkingSvc: ParkingService) {
+        private sbpSvc: SBPService) {
     }
 
     get dailyFormControl() {
@@ -126,19 +131,12 @@ export class CartPage implements OnInit {
     ngOnInit() {
         this.itemsList = [{zoneId: '775', zoneName: 'Nyandarua'}, {zoneId: '776', zoneName: 'Meru'}];
         // this.getAllParkingZones();
+        this.getAllPermitTypes();
+        this.getAllSubCounties();
     }
 
-// getAllParkingZones() {
-    //     this.parkingSvc.getParkingZones().subscribe(result => {
-    //         this.itemsList = result.map(parkingZone => {
-    //             return {
-    //                 zoneId: parkingZone.subCountyId,
-    //                 zoneName: parkingZone.subCountyName
-    //             };
-    //         });
-    //
-    //     });
-    // }
+
+
 
     payment() {
         this.route.navigate(['./payment']);
@@ -218,7 +216,7 @@ export class CartPage implements OnInit {
         this.parkingCharges = JSON.parse(this.parkingChargesResponse.data.response.parking_types);
         console.log(this.parkingCharges);
 
-        // this.parkingSvc.getParkingPriceDetails(parkingBody).subscribe(result => {
+        // this.sbpSvc.getParkingPriceDetails(parkingBody).subscribe(result => {
         //     this.parkingCharges = JSON.parse(result.data.response.parking_types);
         //
         //     console.log('this.parkingCharges');
@@ -229,44 +227,46 @@ export class CartPage implements OnInit {
 
     getParkingCharge() {
         // alert('in funxtion');
-        console.log(this.dailyFormControl);
+        // console.log(this.dailyFormControl);
+        //
+        // if (this.formGroup.get('regNumber').touched && this.formGroup.get('regNumber').valid
+        //     &&
+        //     this.formGroup.get('parkingType').touched
+        //     &&
+        //     this.formGroup.get('parkingZone').touched
+        //     &&
+        //     this.formGroup.get('vehicleType').touched
+        // ) {
+        //
+        //     const serviceId = this.formGroup.get('parkingType').value;
+        //     const subCountyId = this.formGroup.get('parkingZone').value;
+        //     const carTypeId = this.formGroup.get('vehicleType').value;
+        //
+        //     // this.isLoadingSubject.next(true);
 
-        if (this.formGroup.get('regNumber').touched && this.formGroup.get('regNumber').valid
-            &&
-            this.formGroup.get('parkingType').touched
-            &&
-            this.formGroup.get('parkingZone').touched
-            &&
-            this.formGroup.get('vehicleType').touched
-        ) {
+            const permitTypeId = this.formGroup.get('permitTypeId').value;
 
-            const serviceId = this.formGroup.get('parkingType').value;
-            const subCountyId = this.formGroup.get('parkingZone').value;
-            const carTypeId = this.formGroup.get('vehicleType').value;
-
-            // this.isLoadingSubject.next(true);
-
-            const correctPriceConfig = this.parkingCharges.find(item => {
-                console.log('Trying to filter.');
-                // this.isLoadingSubject.next(false);
-                return item.sub_county_id == subCountyId && item.car_type_id == carTypeId && item.service_code == serviceId;
+            const permitSpecs = this.permitTypes.find(item => {
+                return item.permitTypeId == permitTypeId;
             });
 
-            console.log(correctPriceConfig);
+            const correctPriceConfig = permitSpecs.permitFee;
 
+            console.log(correctPriceConfig);
+        //
             if (correctPriceConfig === undefined) {
                 this.charge = 0;
                 // alert(this.charge);
 
             } else {
-                this.charge = correctPriceConfig.fee;
+                this.charge = correctPriceConfig;
                 // alert('has value' + this.charge);
 
             }
-            // alert('mwisho charge ni' + this.charge);
-
+        //     // alert('mwisho charge ni' + this.charge);
+        //
             return this.charge;
-        }
+        // }
     }
 
     isControlValid(controlName: string): boolean {
@@ -280,5 +280,74 @@ export class CartPage implements OnInit {
         const control = this.formGroup.controls[controlName];
         return control.invalid && (control.dirty || control.touched);
     }
+
+    //  Get Permit Types
+    getAllPermitTypes() {
+        this.sbpSvc.getPermitTypes().subscribe(result => {
+
+
+            this.permitTypes = JSON.parse(result.data.response.sbptype_data).map(permitType => {
+                return {
+                    permitTypeId: permitType.permit_type_id,
+                    permitTypeName: permitType.permit_type_name,
+                    permitFee: permitType.permit_fee
+                };
+            });
+
+        });
+    }
+
+    //  Get Subcounties
+    getAllSubCounties() {
+        this.sbpSvc.getParkingZones().subscribe(result => {
+
+            this.subcounties = JSON.parse(result.data.response.sub_counties).map(parkingZone => {
+                return {
+                    zoneId: parkingZone.sub_county_id,
+                    zoneName: parkingZone.sub_county_name
+                };
+            });
+
+        });
+    }
+
+    //  Get Wards
+    getAllWards(event) {
+
+        let subCountyId;
+        if (event.detail.value === undefined){
+            return this.wards = [{
+                wardId: '',
+                wardName: 'No wards found'
+            }];
+        }
+        subCountyId = event.detail.value;
+
+        console.log('subCountyId');
+        console.log(subCountyId);
+        this.sbpSvc.getWards(subCountyId).subscribe(result => {
+
+            if (result.data.response.wards === undefined) {
+                return this.wards = [{
+                    wardId: '',
+                    wardName: 'No wards found'
+                }];
+            }
+
+            this.wards = JSON.parse(result.data.response.wards).map(wards => {
+                return {
+                    wardId: wards.ward_id,
+                    wardName: wards.ward_name
+                };
+            });
+
+        }, error => {
+            return this.wards = [{
+                wardId: '',
+                wardName: 'No wards found'
+            }];
+        });
+    }
+
 
 }
