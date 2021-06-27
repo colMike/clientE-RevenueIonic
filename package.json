@@ -1,7 +1,7 @@
 {
-  "name": "E-Revenue Client Application",
+  "name": "Customer",
   "version": "0.0.1",
-  "author": "Compulynx(Michael)",
+  "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",

@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.erevenue.client',
-  appName: 'E-Revenue Client Application',
+  appId: 'io.ionic.starter',
+  appName: 'Customer',
   webDir: 'www',
   bundledWebRuntime: false
 };
