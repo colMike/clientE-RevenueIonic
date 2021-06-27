@@ -1,0 +1,525 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button icon="chevron-back-outline" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>SBP Payment</ion-title>
+    </ion-toolbar>
+    <div class="shop_name">
+        <h2 class="text-center">Apply for Single Business Permit</h2>
+    </div>
+</ion-header>
+
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list lines="none">
+        <div class="item_list animate__animated animate__fadeInUp">
+            <form [formGroup]="formGroup">
+
+                <ion-toolbar>
+                    <ion-title>Business Details</ion-title>
+                    <ion-progress-bar value=".6"></ion-progress-bar>
+                </ion-toolbar>
+
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="businessName" mode="md" placeholder="Business Name *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="regNo" mode="md" placeholder="Certificate of incorporation."
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="PIN" mode="md" placeholder="KRA PIN number *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="vat" mode="md" placeholder="VAT Number. *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="postalAdd" mode="md" placeholder="P.O. Box *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="postalCode" mode="md" placeholder="Postal Code."
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="postalTown" mode="md" placeholder="Postal Town *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+
+                <ion-toolbar>
+                    <ion-title>Additional Business Details</ion-title>
+                    <ion-progress-bar value=".6"></ion-progress-bar>
+                </ion-toolbar>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="mobileNo" mode="md" placeholder="Business Mobile Number *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="altMobileNo" mode="md"
+                                           placeholder="Alternative Business Number"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="email" mode="md" placeholder="Business Email *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="landZone" mode="md"
+                                           placeholder="Business physical address *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="plotNo" mode="md" placeholder="Plot Number *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="building" mode="md" placeholder="Building name *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="room" mode="md" placeholder="Room/Stall number"
+                                           type="number"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <ion-toolbar>
+                    <ion-title>Applicant Details</ion-title>
+                    <ion-progress-bar value=".6"></ion-progress-bar>
+                </ion-toolbar>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="applicant" mode="md" placeholder="First Name *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="applicant" mode="md" placeholder="Second Name *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="applicant" mode="md" placeholder="Third Name *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                                <ion-select
+                                        cancel-text="Cancel"
+                                        ok-text="Submit"
+                                        formControlName="documentType"
+                                        placeholder="Document Type *">
+                                    <ion-select-option
+                                            *ngFor="let item of [{id:1, name: 'ID Card'}, {id:2, name: 'Passport'}, {id:2, name: 'Drivers License'}]"
+                                            value="{{item.name}}">{{item.name | titlecase}}</ion-select-option>
+                                </ion-select>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="nationalId" mode="md" placeholder="Document Number*"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="applicantMobile" mode="md"
+                                           placeholder="Owner's mobile number *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="personalNumber" mode="md"
+                                           placeholder="Alternative mobile number"
+                                           type="number"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="personalAdd" mode="md" placeholder="Personal Address *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="personalCode" mode="md" placeholder="Postal Code Address *"
+                                           type="number"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <ion-toolbar>
+                    <ion-title>Activity Description</ion-title>
+                    <ion-progress-bar value=".6"></ion-progress-bar>
+                </ion-toolbar>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-textarea formControlName="businessDesc" mode="md"
+                                              placeholder="Activity Description *"
+                                              type="name"></ion-textarea>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-textarea formControlName="otherActivity" mode="md" placeholder="Other details"
+                                              type="name"></ion-textarea>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="area" mode="md" placeholder="Area (M2) *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="noOfEmployees" mode="md" placeholder="No of Employees *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <ion-item>
+                    <ion-label>Permit Type</ion-label>
+                    <ion-select
+                            cancel-text="Cancel"
+                            ok-text="Submit"
+                            formControlName="permitTypeId"
+                            placeholder="Permit Type *">
+                        <ion-select-option
+                                *ngFor="let item of permitTypes"
+                                value="{{item.permitTypeId}}">{{item.permitTypeName | titlecase}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label>Sub County</ion-label>
+                    <ion-select
+                            (ionChange)="getAllWards($event)"
+                            cancel-text="Cancel"
+                            formControlName="subcountyId"
+                            ok-text="Submit"
+                            placeholder="Sub-County *">
+                        <ion-select-option *ngFor="let item of subcounties"
+                                           value="{{item.zoneId}}">{{item.zoneName | titlecase}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Ward</ion-label>
+                    <ion-select
+                            cancel-text="Cancel"
+                            formControlName="wardId"
+                            ok-text="Submit"
+                            placeholder="Ward *">
+                        <ion-select-option *ngFor="let item of wards"
+                                           value="{{item.wardId}}">{{item.wardName | titlecase}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+<!--                <div class="form animate__animated animate__fadeInUp">-->
+<!--                    <ion-item lines="none">-->
+<!--                        <div class="item_inner d-flex">-->
+<!--                            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>-->
+<!--                            <div class="input_box">-->
+<!--                                <ion-input formControlName="wardId" mode="md" placeholder="Ward *"-->
+<!--                                           type="number"></ion-input>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </ion-item>-->
+<!--                </div>-->
+
+
+                <!--                <div class="form animate__animated animate__fadeInUp">-->
+                <!--                    <ion-item lines="none">-->
+                <!--                        <div class="item_inner d-flex">-->
+                <!--                            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>-->
+                <!--                            <div class="input_box">-->
+                <!--                                <ion-input formControlName="subcountyId" mode="md" placeholder="Sub-County *"-->
+                <!--                                           type="name"></ion-input>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </ion-item>-->
+                <!--                </div>-->
+
+
+                <!--                <div class="form animate__animated animate__fadeInUp">-->
+                <!--                    <ion-item lines="none">-->
+                <!--                        <div class="item_inner d-flex">-->
+                <!--                            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>-->
+                <!--                            <div class="input_box">-->
+                <!--                                <ion-input formControlName="postalAdd" mode="md" placeholder="Postal Address."-->
+                <!--                                           type="name"></ion-input>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </ion-item>-->
+                <!--                </div>-->
+
+                <!--                <ion-item>-->
+                <!--                    <ion-label>Business Name *</ion-label>-->
+                <!--                    <ion-select-->
+                <!--                            (ionChange)="getAllParkingCharges()"-->
+                <!--                            cancel-text="Cancel"-->
+
+                <!--                            ok-text="Submit">-->
+                <!--                        <ion-select-option *ngFor="let item of itemsList"-->
+                <!--                                           value="{{item.zoneId}}">{{item.zoneName | titlecase}}</ion-select-option>-->
+                <!--                    </ion-select>-->
+                <!--                </ion-item>-->
+
+                <!--                <ion-item>-->
+                <!--                    <ion-label>Parking Type</ion-label>-->
+                <!--                    <ion-select-->
+                <!--                            cancel-text="Cancel"-->
+                <!--                            ok-text="Submit"-->
+                <!--                            >-->
+                <!--                        <ion-select-option *ngFor="let type of parkingCharges"-->
+                <!--                                           value="{{type.service_code}}">{{type.service_name | titlecase}}</ion-select-option>-->
+                <!--                    </ion-select>-->
+                <!--                </ion-item>-->
+
+                <!--                <ion-item>-->
+                <!--                    <ion-label>Vehicle Type</ion-label>-->
+                <!--                    <ion-select cancel-text="Cancel" ok-text="Submit"-->
+                <!--                                >-->
+                <!--                        <ion-select-option *ngFor="let type of parkingCharges"-->
+                <!--                                           value="{{type.car_type_id}}">{{type.car_type_name | titlecase}}</ion-select-option>-->
+                <!--                    </ion-select>-->
+                <!--                </ion-item>-->
+
+                <!--                <div class="form animate__animated animate__fadeInUp">-->
+                <!--                    <ion-item lines="none">-->
+                <!--                        <div class="item_inner d-flex">-->
+                <!--                            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>-->
+                <!--                            <div class="input_box">-->
+                <!--                                <ion-input  mode="md" placeholder="Vehicle Reg number.eg KAC 2020D"-->
+                <!--                                           type="name"></ion-input>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </ion-item>-->
+                <!--                </div>-->
+            </form>
+        </div>
+
+        <div class="text-center mb-2">
+            <button (click)="getParkingCharge()" class="btn btn-outline-secondary btn-md" size="small">Get Cost</button>
+        </div>
+
+
+        <div class="payment_info animate__animated animate__fadeInUp">
+            <h1>{{'payment_info' | translate}}</h1>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex">Permit Cost<span class="end">Kes {{charge}}.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex">{{'service_fee' | translate}} <span class="end">Kes 0.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">Kes {{charge + 0}}.00</span>
+                    </h2>
+                </div>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button (click)="payment()" class="btn" expand="full" size="large">{{'pay' | translate}} Kes {{charge}}.00
+    </ion-button>
+</ion-footer>

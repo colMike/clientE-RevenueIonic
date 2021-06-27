@@ -1,0 +1,31 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>order-placed</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content>
+    <div class="container ion-text-center">
+        <div class="img_box animate__animated animate__zoomIn">
+            <img src="../../../../assets/images/order_placed.png">
+        </div>
+        <div class="text_box">
+            <h2 class="animate__animated animate__fadeInUp">Transaction Initiated</h2>
+            <ng-container *ngIf="currentService == 'Parking'">
+                <p class="animate__animated animate__fadeInUp">Your Parking Payment of Kes 200 for Nairobi Parking Zone has been initiated.</p>
+                <p class="animate__animated animate__fadeInUp">Kindly check your phone for a notification to complete the transaction.</p>
+            </ng-container>
+            <ng-container *ngIf="currentService == 'SBP'">
+                <p class="animate__animated animate__fadeInUp">Your SBP Payment of Kes 3000 for your Business has been initiated.</p>
+                <p class="animate__animated animate__fadeInUp">Kindly check your phone for a notification to complete the transaction.</p>
+            </ng-container>
+
+
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn" (click)="tabs()"> Back </ion-button>
+</ion-footer>

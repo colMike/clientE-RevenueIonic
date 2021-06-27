@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG, AppConfig } from './app.config';
 import { MyEvent } from 'src/services/myevent.services';
 import { Constants } from 'src/models/contants.models';
-import { VtPopupPage } from './vt-popup/vt-popup.page';
+import { VtPopupPage } from './OtherComponents/vt-popup/vt-popup.page';
 
 @Component({
   selector: 'app-root',

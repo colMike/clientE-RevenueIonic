@@ -32,6 +32,6 @@ export class HomePage implements OnInit {
     }
 
     getNotifications() {
-        alert('It works');
+        // alert('It works');
     }
 }

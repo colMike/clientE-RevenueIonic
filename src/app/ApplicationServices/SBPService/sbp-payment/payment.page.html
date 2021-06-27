@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="toolbar_inner d-flex">
+            <ion-buttons slot="start" mode="md">
+                <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+            </ion-buttons>
+            <ion-title>
+                <div class="title_inner">
+                    {{'select_payment_method' | translate}}
+                    <h4>{{'amount_to_pay' | translate}} Kes 50.00</h4>
+                </div>
+            </ion-title>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    <ion-list lines="none">
+        <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner">
+                <h2></h2>
+                <div class="payment_option d-flex" (click)="pay()">
+                    <div class="img_box center_img">
+                        <img src="../../../../assets/images/mpesa-logo.png" class="crop_img">
+                    </div>
+                    <h3>M-Pesa</h3>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner">
+                <h2>{{'other' | translate}}</h2>
+                <div class="payment_option d-flex" (click)="pay()">
+                    <div class="img_box center_img">
+                        <img src="../../../../assets/images/payment_card.png" class="crop_img">
+                    </div>
+                    <h3>Credit/ Debit Card</h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+    </ion-list>
+</ion-content>

@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'verification',
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'set-location',
-    loadChildren: () => import('./set-location/set-location.module').then( m => m.SetLocationPageModule)
+    loadChildren: () => import('./OtherComponents/set-location/set-location.module').then(m => m.SetLocationPageModule)
   },
   {
     path: 'home',
@@ -33,55 +33,67 @@ const routes: Routes = [
   },
   {
     path: 'stores',
-    loadChildren: () => import('./stores/stores.module').then( m => m.StoresPageModule)
+    loadChildren: () => import('./OtherComponents/stores/stores.module').then(m => m.StoresPageModule)
   },
   {
     path: 'items',
-    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+    loadChildren: () => import('./OtherComponents/items/items.module').then(m => m.ItemsPageModule)
   },
   {
     path: 'variation-selection',
-    loadChildren: () => import('./variation-selection/variation-selection.module').then( m => m.VariationSelectionPageModule)
+    loadChildren: () => import('./OtherComponents/variation-selection/variation-selection.module').then(m => m.VariationSelectionPageModule)
   },
   {
     path: 'cart',
-    loadChildren: () => import('./parking/cart.module').then(m => m.CartPageModule)
+    loadChildren: () => import('./ApplicationServices/ParkingService/parking/cart.module').then(m => m.CartPageModule)
   },
   {
     path: 'sbp',
-    loadChildren: () => import('./sbp/cart.module').then(m => m.CartPageModule)
+    loadChildren: () => import('./ApplicationServices/SBPService/sbp/cart.module').then(m => m.CartPageModule)
   },
   {
     path: 'payment',
-    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+    loadChildren: () => import('./ApplicationServices/ParkingService/payment/payment.module').then(m => m.PaymentPageModule)
+  },
+  {
+    path: 'sbp-payment',
+    loadChildren: () => import('./ApplicationServices/SBPService/sbp-payment/payment.module').then(m => m.PaymentPageModule)
   },
   {
     path: 'mpesa-payment',
-    loadChildren: () => import('./mpesa-payment/mpesa-payment.module').then( m => m.OrderPlacedPageModule)
+    loadChildren: () => import('./ApplicationServices/ParkingService/mpesa-payment/mpesa-payment.module').then(m => m.OrderPlacedPageModule)
+  },
+  {
+    path: 'sbp-mpesa-payment',
+    loadChildren: () => import('./ApplicationServices/SBPService/sbp-mpesa-payment/mpesa-payment.module').then(m => m.OrderPlacedPageModule)
   },
   {
     path: 'order-placed',
-    loadChildren: () => import('./order-placed/order-placed.module').then( m => m.OrderPlacedPageModule)
+    loadChildren: () => import('./ApplicationServices/ParkingService/order-placed/order-placed.module').then(m => m.OrderPlacedPageModule)
+  },
+  {
+    path: 'sbp-order-placed',
+    loadChildren: () => import('./ApplicationServices/SBPService/sbp-order-placed/order-placed.module').then(m => m.OrderPlacedPageModule)
   },
   {
     path: 'my-orders',
-    loadChildren: () => import('./my-orders/my-orders.module').then( m => m.MyOrdersPageModule)
+    loadChildren: () => import('./OtherComponents/my-orders/my-orders.module').then(m => m.MyOrdersPageModule)
   },
   {
     path: 'order-detail',
-    loadChildren: () => import('./order-detail/order-detail.module').then( m => m.OrderDetailPageModule)
+    loadChildren: () => import('./OtherComponents/order-detail/order-detail.module').then(m => m.OrderDetailPageModule)
   },
   {
     path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+    loadChildren: () => import('./OtherComponents/chat/chat.module').then(m => m.ChatPageModule)
   },
   {
     path: 'my-account',
-    loadChildren: () => import('./my-account/my-account.module').then( m => m.MyAccountPageModule)
+    loadChildren: () => import('./OtherComponents/my-account/my-account.module').then(m => m.MyAccountPageModule)
   },
   {
     path: 'saved-addresses',
-    loadChildren: () => import('./saved-addresses/saved-addresses.module').then( m => m.SavedAddressesPageModule)
+    loadChildren: () => import('./OtherComponents/saved-addresses/saved-addresses.module').then(m => m.SavedAddressesPageModule)
   },
   {
     path: 'support',
@@ -93,35 +105,35 @@ const routes: Routes = [
   },
   {
     path: 'buyappalert',
-    loadChildren: () => import('./buyappalert/buyappalert.module').then( m => m.BuyappalertPageModule)
+    loadChildren: () => import('./OtherComponents/buyappalert/buyappalert.module').then(m => m.BuyappalertPageModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () => import('./OtherComponents/settings/settings.module').then(m => m.SettingsPageModule)
   },
   {
     path: 'socila-login',
-    loadChildren: () => import('./socila-login/socila-login.module').then( m => m.SocilaLoginPageModule)
+    loadChildren: () => import('./auth/socila-login/socila-login.module').then(m => m.SocilaLoginPageModule)
   },
   {
     path: 'reviews',
-    loadChildren: () => import('./reviews/reviews.module').then( m => m.ReviewsPageModule)
+    loadChildren: () => import('./OtherComponents/reviews/reviews.module').then(m => m.ReviewsPageModule)
   },
   {
     path: 'add-review',
-    loadChildren: () => import('./add-review/add-review.module').then( m => m.AddReviewPageModule)
+    loadChildren: () => import('./OtherComponents/add-review/add-review.module').then(m => m.AddReviewPageModule)
   },
   {
     path: 'wallet',
-    loadChildren: () => import('./wallet/wallet.module').then( m => m.WalletPageModule)
+    loadChildren: () => import('./OtherComponents/wallet/wallet.module').then(m => m.WalletPageModule)
   },
   {
     path: 'add-money',
-    loadChildren: () => import('./add-money/add-money.module').then( m => m.AddMoneyPageModule)
+    loadChildren: () => import('./OtherComponents/add-money/add-money.module').then(m => m.AddMoneyPageModule)
   },
   {
     path: 'vt-popup',
-    loadChildren: () => import('./vt-popup/vt-popup.module').then( m => m.VtPopupPageModule)
+    loadChildren: () => import('./OtherComponents/vt-popup/vt-popup.module').then(m => m.VtPopupPageModule)
   }
 
 ];

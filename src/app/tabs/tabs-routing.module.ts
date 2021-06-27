@@ -13,11 +13,11 @@ const routes: Routes = [
       },
       {
         path: 'my_orders',
-        loadChildren: () => import('../my-orders/my-orders.module').then(m => m.MyOrdersPageModule)
+        loadChildren: () => import('../OtherComponents/my-orders/my-orders.module').then(m => m.MyOrdersPageModule)
       },
       {
         path: 'my_account',
-        loadChildren: () => import('../my-account/my-account.module').then(m => m.MyAccountPageModule)
+        loadChildren: () => import('../OtherComponents/my-account/my-account.module').then(m => m.MyAccountPageModule)
       },
       {
         path: '',

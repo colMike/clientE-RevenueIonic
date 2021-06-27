@@ -1,0 +1,39 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>order-placed</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content xmlns="http://www.w3.org/1999/html">
+    <div class="container ion-text-center">
+        <div class="img_box animate__animated animate__zoomIn">
+            <img src="../../../../assets/images/mpesa-logo.png">
+        </div>
+        <div class="text_box mt-0">
+
+            <h3 class="animate__animated animate__fadeInUp">Enter your Phone Number</h3>
+            <form [formGroup]="formGroup">
+                <div class="form animate__animated animate__fadeInUp">
+                    <ion-item lines="none">
+                        <div class="item_inner d-flex">
+                            <div class="icon_box ion-text-start"><img src="../../../../assets/images/ic_instruction.png"></div>
+                            <div class="input_box">
+                                <ion-input formControlName="phoneNumber" mode="md" placeholder="Mobile Number *"
+                                           type="name"></ion-input>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+
+                <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+                    <ion-button (click)="onSubmit()" class="btn" shape="full" size="large"> Make Payment</ion-button>
+                </ion-footer>
+
+            </form>
+            <p class="animate__animated animate__fadeInUp"></p>
+        </div>
+    </div>
+</ion-content>
+

@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button icon="chevron-back-outline" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            E-Revenue
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+    <div class="form">
+        <ion-list lines="none">
+            <h1 class="animate__animated animate__fadeInUp">{{'hey' | translate}} Customer,</h1>
+            <h2 class="animate__animated animate__fadeInUp">
+                Welcome to E-Revenue
+                <br>
+                New here? <a routerLink="../register">Sign Up.</a>
+                <br>
+
+
+            </h2>
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <div class="icon_box ion-text-start"><img src="../../../assets/images/email.png"></div>
+                    <div class="input_box">
+                        <ion-label mode="md" position="stacked">Email</ion-label>
+                        <ion-input mode="md" placeholder="Enter Email" type="text" value=""></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <div class="icon_box ion-text-start"><img src="../../../assets/images/password.png"></div>
+                    <div class="input_box">
+                        <ion-label mode="md" position="stacked">Password</ion-label>
+                        <ion-input mode="md" placeholder="Enter Password" type="password" value=""></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <!--            <p class="d-flex animate__animated animate__fadeInUp"><span class="end">{{"we_ll_send_verification_code_on_above_given_number" | translate}}</span></p>-->
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp" style="--animate-duration: .4s;">
+    <ion-button (click)="verification()" class="btn" expand="full" size="large">{{'continue' | translate}}</ion-button>
+</ion-footer>
