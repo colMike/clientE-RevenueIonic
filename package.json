@@ -1,7 +1,7 @@
 {
-  "name": "Customer",
+  "name": "E-Revenue Client Application",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Compulynx(Michael)",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -33,7 +33,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
-
+    "cordova-android": "^8.1.0",
     "jquery": "^3.6.0",
     "ngx-wow": "^2.0.1",
     "popper.js": "^1.16.1",
